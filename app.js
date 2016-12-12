@@ -47,10 +47,13 @@ lr.on('line', function(line) {
 				  if(res.statusCode == 200) {
 					  console.log(res.headers.location + "/server-status\n");
 				  }
+<<<<<<< HEAD
 				  else if(res.statusCode == 403) {
 					  console.log('Nada ' + res.headers.location + "/server-status\n");
 				  }
 				  
+=======
+>>>>>>> d647e313229ba684c4149d545c778c00cfc90716
 				
 				  }).on('error', function(e) {
 				    //console.error(e);
@@ -62,9 +65,12 @@ lr.on('line', function(line) {
 				  if(res.statusCode == 200) {
 					  console.log(res.headers.location + "/server-status/\n");
 				  }
+<<<<<<< HEAD
 				  else if(res.statusCode == 403) {
 					  console.log('Nada ' + res.headers.location + "/server-status\n");
 				  }
+=======
+>>>>>>> d647e313229ba684c4149d545c778c00cfc90716
 				
 				  }).on('error', function(e) {
 				    //console.error(e);
@@ -79,9 +85,12 @@ lr.on('line', function(line) {
 				  if(res.statusCode == 200) {
 					  console.log(res.headers.location + "/server-status\n");
 				  }
+<<<<<<< HEAD
 				  else if(res.statusCode == 403) {
 					  console.log('Nada ' + res.headers.location + "/server-status\n");
 				  }
+=======
+>>>>>>> d647e313229ba684c4149d545c778c00cfc90716
 				
 				  }).on('error', function(e) {
 				    //console.error(e);
@@ -93,9 +102,12 @@ lr.on('line', function(line) {
 				  if(res.statusCode == 200) {
 					  console.log(res.headers.location + "/server-status/\n");
 				  }
+<<<<<<< HEAD
 				  else if(res.statusCode == 403) {
 					  console.log('Nada ' + res.headers.location + "/server-status\n");
 				  }
+=======
+>>>>>>> d647e313229ba684c4149d545c778c00cfc90716
 				
 				  }).on('error', function(e) {
 				    //console.error(e);
