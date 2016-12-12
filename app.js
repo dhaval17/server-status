@@ -47,6 +47,10 @@ lr.on('line', function(line) {
 				  if(res.statusCode == 200) {
 					  console.log(res.headers.location + "/server-status\n");
 				  }
+				  else if(res.statusCode == 403) {
+					  console.log('Nada ' + res.headers.location + "/server-status\n");
+				  }
+				  
 				
 				  }).on('error', function(e) {
 				    //console.error(e);
@@ -57,6 +61,9 @@ lr.on('line', function(line) {
 				  //console.log("headers: ", res.headers);
 				  if(res.statusCode == 200) {
 					  console.log(res.headers.location + "/server-status/\n");
+				  }
+				  else if(res.statusCode == 403) {
+					  console.log('Nada ' + res.headers.location + "/server-status\n");
 				  }
 				
 				  }).on('error', function(e) {
@@ -72,6 +79,9 @@ lr.on('line', function(line) {
 				  if(res.statusCode == 200) {
 					  console.log(res.headers.location + "/server-status\n");
 				  }
+				  else if(res.statusCode == 403) {
+					  console.log('Nada ' + res.headers.location + "/server-status\n");
+				  }
 				
 				  }).on('error', function(e) {
 				    //console.error(e);
@@ -82,6 +92,9 @@ lr.on('line', function(line) {
 				  //console.log("headers: ", res.headers);
 				  if(res.statusCode == 200) {
 					  console.log(res.headers.location + "/server-status/\n");
+				  }
+				  else if(res.statusCode == 403) {
+					  console.log('Nada ' + res.headers.location + "/server-status\n");
 				  }
 				
 				  }).on('error', function(e) {
