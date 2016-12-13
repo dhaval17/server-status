@@ -3,7 +3,7 @@ var http = require('http');
 var url = require('url');
 
 var LineByLineReader = require('line-by-line'),
-	lr = new LineByLineReader('alexa100kk.txt');
+	lr = new LineByLineReader('testbed');
 	
 lr.on('line', function(line) {
 	//console.log(line);
@@ -19,8 +19,8 @@ lr.on('line', function(line) {
 			  if(response.statusCode == 200) {
 					  console.log('http://' + line + "/server-status/\n");
 			  }
-			  else if(response.statusCode >= 400) {
-					  //console.log('Nada4 http://' + line + "/server-status\n");
+			  else if(response.statusCode == 403 || response.statusCode == 401) {
+					  console.log('Forbidden http://' + line + "/server-status/\n");
 			  }
 			    
 			  }).on('error', function(e) {
@@ -40,8 +40,8 @@ lr.on('line', function(line) {
 						  console.log(res.headers.location + "server-status/\n");
 					  }
 	
-					  else if(response.statusCode >= 400) {
-						  //console.log('Nada1 ' + res.headers.location + "server-status/\n");
+					  else if(response.statusCode == 403 || response.statusCode == 401) {
+						  console.log('Forbidden ' + res.headers.location + "server-status/\n");
 					  }
 
 				  }).on('error', function(e) {
@@ -58,8 +58,8 @@ lr.on('line', function(line) {
 						  console.log(res.headers.location + "server-status/\n");
 					  }
 	
-					  else if(response.statusCode >= 400) {
-						  //console.log('Nada2 ' + res.headers.location + "server-status/\n");
+					  else if(response.statusCode == 403 || response.statusCode == 401) {
+						  console.log('Forbidden ' + res.headers.location + "server-status/\n");
 					  }
 				
 				  }).on('error', function(e) {
