@@ -3,7 +3,7 @@ var http = require('http');
 var url = require('url');
 
 var LineByLineReader = require('line-by-line'),
-	lr = new LineByLineReader('testbed');
+	lr = new LineByLineReader('alexa100kk.txt');
 	
 lr.on('line', function(line) {
 	//console.log(line);
