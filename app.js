@@ -12,31 +12,17 @@ lr.on('line', function(line) {
 		//console.log("statusCode: ", res.statusCode); // <======= Here's the status code
 		//console.log("headers: ", res.headers);
 		if(res.statusCode == 200) {
-			  //console.log('http://' + line + '/');
-			  http.get('http://' + line + '/server-status', function(res) {
-			  //console.log("statusCode: ", res.statusCode); // <======= Here's the status code
-			  //console.log("headers: ", res.headers);
-			  if(res.statusCode == 200) {
-					  console.log('http://' + line + "/server-status\n");
-			  }
-			  else if(res.statusCode == 403) {
-					  console.log('Nada http://' + res.line + "/server-status\n");
-			  }
-				  
-			  }).on('error', function(e) {
-			  //console.error(e);
-			  });
 			  
-			  http.get('http://' + line + '/server-status/', function(res) {
+			  http.get('http://' + line + '/server-status/', function(response) {
 			  //console.log("statusCode: ", res.statusCode); // <======= Here's the status code
 			  //console.log("headers: ", res.headers);
-			  if(res.statusCode == 200) {
+			  if(response.statusCode == 200) {
 					  console.log('http://' + line + "/server-status/\n");
 			  }
-			  else if(res.statusCode == 403) {
-					  console.log('Nada http://' + res.line + "/server-status\n");
+			  else if(response.statusCode >= 400) {
+					  //console.log('Nada4 http://' + line + "/server-status\n");
 			  }
-				  
+			    
 			  }).on('error', function(e) {
 			  //console.error(e);
 			  });
@@ -47,34 +33,17 @@ lr.on('line', function(line) {
 			//console.log(whatp);
 			if(whatp == "http:") {
 				  
-				  http.get(res.headers.location + '/server-status', function(res) {
-				  //console.log("statusCode: ", res.statusCode); // <======= Here's the status code
-				  //console.log("headers: ", res.headers);
-				  if(res.statusCode == 200) {
-					  console.log(res.headers.location + "/server-status\n");
-				  }
+				  http.get(res.headers.location + 'server-status/', function(response) {
+					  //console.log("statusCode: ", res.statusCode); // <======= Here's the status code
+					  //console.log("headers: ", res.headers);
+					  if(response.statusCode == 200) {
+						  console.log(res.headers.location + "server-status/\n");
+					  }
+	
+					  else if(response.statusCode >= 400) {
+						  //console.log('Nada1 ' + res.headers.location + "server-status/\n");
+					  }
 
-				  else if(res.statusCode == 403) {
-					  console.log('Nada ' + res.headers.location + "/server-status\n");
-				  }
-				  
-				
-				  }).on('error', function(e) {
-				    //console.error(e);
-				  });
-				  
-				  http.get(res.headers.location + '/server-status/', function(res) {
-				  //console.log("statusCode: ", res.statusCode); // <======= Here's the status code
-				  //console.log("headers: ", res.headers);
-				  if(res.statusCode == 200) {
-					  console.log(res.headers.location + "/server-status/\n");
-				  }
-
-				  else if(res.statusCode == 403) {
-					  console.log('Nada ' + res.headers.location + "/server-status\n");
-				  }
-
-				
 				  }).on('error', function(e) {
 				    //console.error(e);
 				  });
@@ -82,31 +51,16 @@ lr.on('line', function(line) {
 			}
 			else {
 				  
-				  https.get(res.headers.location + '/server-status', function(res) {
-				  //console.log("statusCode: ", res.statusCode); // <======= Here's the status code
-				  //console.log("headers: ", res.headers);
-				  if(res.statusCode == 200) {
-					  console.log(res.headers.location + "/server-status\n");
-				  }
-
-				  else if(res.statusCode == 403) {
-					  console.log('Nada ' + res.headers.location + "/server-status\n");
-				  }
-				
-				  }).on('error', function(e) {
-				    //console.error(e);
-				  });
-				  
-				  https.get(res.headers.location + '/server-status/', function(res) {
-				  //console.log("statusCode: ", res.statusCode); // <======= Here's the status code
-				  //console.log("headers: ", res.headers);
-				  if(res.statusCode == 200) {
-					  console.log(res.headers.location + "/server-status/\n");
-				  }
-
-				  else if(res.statusCode == 403) {
-					  console.log('Nada ' + res.headers.location + "/server-status\n");
-				  }
+				  https.get(res.headers.location + 'server-status/', function(response) {
+					  //console.log("statusCode: ", res.statusCode); // <======= Here's the status code
+					  //console.log("headers: ", res.headers);
+					  if(response.statusCode == 200) {
+						  console.log(res.headers.location + "server-status/\n");
+					  }
+	
+					  else if(response.statusCode >= 400) {
+						  //console.log('Nada2 ' + res.headers.location + "server-status/\n");
+					  }
 				
 				  }).on('error', function(e) {
 				    //console.error(e);
